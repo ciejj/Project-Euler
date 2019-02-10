@@ -1,12 +1,17 @@
 require 'benchmark'
-require_relative 'pe_001_brute_force'
+require_relative 'sum_of_multiples'
 
 limit = 1000
-n=5000
+n=500
+
+puts "Brute Force result: #{SumOfMultiples.brute_force(limit)}" 
+
+puts "----"
+
 Benchmark.bm do |benchmark|
   benchmark.report('brute_force') do
     n.times do
-      PE001BruteForce.sum_of_multiples(limit)
+      SumOfMultiples.brute_force(limit)
     end
   end
 end
