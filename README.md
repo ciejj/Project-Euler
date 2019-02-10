@@ -1,5 +1,5 @@
-# Project_Euler_001
+# Project_Euler
 
-https://projecteuler.net/problem=1
+https://projecteuler.net/
 
 #ruby
