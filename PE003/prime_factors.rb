@@ -1,17 +1,21 @@
+require 'pry'
+
 class PrimeFactors
 
   def self.brute_force(limit)
-    max=0
     i=2
+    factors_array = Array.new
 
-    while (i < limit)
+    while (i <= limit)
+
       if limit % i == 0
-      max= i
+        #binding.pry
+      factors_array << i
       limit = limit/i
       else i+=1
       end
     end
     
-    max
+    factors_array
   end
 end
