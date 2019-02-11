@@ -16,6 +16,6 @@ class PrimeFactors
       end
     end
     
-    factors_array
+    factors_array.last
   end
 end
