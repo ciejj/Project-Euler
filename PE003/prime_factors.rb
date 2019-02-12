@@ -1,26 +1,34 @@
-require 'pry'
-
 class PrimeFactors
-  def self.brute_force(big_number)
-    i = 2
-    factors_array = []
 
-    # list all factors of the big_number
-    while i <= big_number
-      if (big_number % i).zero?
-        factors_array << i
-        big_number /= i
-      else i += 1
+  def self.arithmetic(big_number)
+    prime_factor = 2
+
+    while prime_factor <= big_number
+      if (big_number % prime_factor).zero?
+        big_number /= prime_factor
+      else prime_factor += 1
       end
     end
-
-    # find the biggest prime factor
-    factors_array.reverse_each { |f| return f if prime?(f) }
+    prime_factor
   end
 
-  # returns true, if the number is prime
-  def self.prime?(number)
-    2.upto(number - 1).each { |k| return false if (number % k).zero? }
-    true
+  def self.arithmetic_improved(big_number)
+    prime_factor = 2
+
+    while (big_number / prime_factor).zero?
+        big_number /= prime_factor
+    end
+
+    prime_factor=3
+
+    while prime_factor <= big_number
+      if (big_number % prime_factor).zero?
+        big_number /= prime_factor
+      else
+        prime_factor += 2
+      end
+    end
+    prime_factor
   end
+
 end
