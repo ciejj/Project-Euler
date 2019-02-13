@@ -3,7 +3,6 @@ require_relative 'palindromic_number'
 
 describe PalindromicNumber do
 
-
   it 'finds that 11 is palindrome' do
     expect(PalindromicNumber.palindrome?(11)).to eq(true)
   end
