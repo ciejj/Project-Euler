@@ -18,9 +18,29 @@ describe SmallestMultiple do
     expect(SmallestMultiple.dividable_by_each_between(1, 10, 2520)).to eq(true)
   end
 
-  it 'finds 2520 as the smallest number dividable by each of numbers from 1 to 10' do
+  it 'finds 2520 as the smallest number dividable by each of numbers from 1 to 10 - brute force' do
     expect(SmallestMultiple.brute_force(1,10)).to eq(2520)
   end
+
+  it 'finds 2520 as the smallest number dividable by each of numbers from 1 to 10 - unique prime factors' do
+    expect(SmallestMultiple.unique_prime_factors(1,10)).to eq(2520)
+  end
+
+ it 'finds prime factors of 4' do
+  expect(SmallestMultiple.find_prime_factors(4)).to eq([2,2])
+ end
+
+ it 'finds prime factors of 5' do
+  expect(SmallestMultiple.find_prime_factors(5)).to eq([5])
+ end
+
+ it 'finds prime factors of 12' do
+  expect(SmallestMultiple.find_prime_factors(12)).to eq([2,2,3])
+ end
+ 
+ it 'finds 2520 as the smallest number dividable by each of numbers from 1 to 10 - unique prime factors' do
+  expect(SmallestMultiple.unique_prime_factors(1,20)).to eq(232792560)
 end
 
-print SmallestMultiple.brute_force(1,20)
+
+end
