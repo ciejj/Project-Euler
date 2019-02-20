@@ -15,7 +15,7 @@ class PrimeFactors
   def self.arithmetic_improved(big_number)
     prime_factor = 2
 
-    while (big_number / prime_factor).zero?
+    while (big_number % prime_factor).zero?
         big_number /= prime_factor
     end
 
@@ -28,6 +28,7 @@ class PrimeFactors
         prime_factor += 2
       end
     end
+
     prime_factor
   end
 
