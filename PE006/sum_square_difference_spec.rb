@@ -18,13 +18,20 @@ describe SumSquareDifference do
     expect(SumSquareDifference.square_of_sum(10)).to eq(3025)
   end
 
-  it 'finds difference between square_of_sum and sum_of_squares for limit=10' do
+  it 'finds brute_force difference between square_of_sum and sum_of_squares for limit=10' do
     expect(SumSquareDifference.brute_force(10)).to eq(2640)
   end
 
-  it 'finds difference between square_of_sum and sum_of_squares for limit=100' do
-    expect(SumSquareDifference.brute_force(100)).to eq(25164150)
+  it 'finds brute_force difference between square_of_sum and sum_of_squares for limit=100' do
+    expect(SumSquareDifference.brute_force(100)).to eq(25_164_150)
   end
 
+  it 'finds arithmetic difference between square_of_sum and sum_of_squares for limit=10' do
+    expect(SumSquareDifference.arithmetic(10)).to eq(2640)
+  end
+
+  it 'finds arithmetic difference between square_of_sum and sum_of_squares for limit=100' do
+    expect(SumSquareDifference.arithmetic(100)).to eq(25_164_150)
+  end
 
 end
