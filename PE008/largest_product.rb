@@ -44,7 +44,15 @@ module LargestProduct
   end
 
 
-
+  # Returns largest product of n (n_o_d) adjacent digits from the input series
+  #   it calculates the first product of n_o_d digits,
+  #   then product is divided by its first digit, and mulitplied by next digit
+  #   it works around dividing by 0 by calculating product from scratch instead
+  #
+  # @param [Integer] n_o_d - number of digits, that product is checked
+  # @param [String] series - input number
+  #
+  # @return [Integer] largest product of N adjacent digits
   def self.slide_and_multiply(n_o_d, series)
 
     prod = product(series[0, n_o_d])
