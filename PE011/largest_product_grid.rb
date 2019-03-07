@@ -8,7 +8,7 @@ class LargestProductGrid
     @matrix = mat
   end
 
-
+  
   def find_largest_product(numbers_in_product)
 
     max_product=0
