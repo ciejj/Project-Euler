@@ -19,6 +19,4 @@ describe FactorialDigitSum do
     factorial = FactorialDigitSum.factorial(100)
     expect(FactorialDigitSum.sum_of_digits(factorial)).to eq(648)
   end
-
-
 end
