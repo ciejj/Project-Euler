@@ -6,10 +6,11 @@ module FibonacciNumber
     counter = 2
     i = 2
 
-    while fib_arr[(i - 1) % 3] <= 10**(limit - 1)
-
+    loop do
       fib_arr[i] = fib_arr[(i + 1) % 3] + fib_arr[(i + 2) % 3]
       counter += 1
+      break if fib_arr[i] >= 10**(limit - 1)
+
       i = (i + 1) % 3
     end
     counter
