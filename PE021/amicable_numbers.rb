@@ -1,6 +1,7 @@
 module AmicableNumbers
+  
   def self.factors_sum(number)
-   root = Integer.sqrt(number)
+   root = Math.sqrt(number).ceil
    temp_sum = 1
    
    #handles case, when the number is sqare
