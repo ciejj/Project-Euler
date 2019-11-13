@@ -1,9 +1,22 @@
 module NonAbudantSums
   
+  LIMIT = 28123
 
-  def self.find_abundant_numbers(limit)
-    (2..limit).each_with_object([]) do |i, arr|
-        puts "DEBUG: number: #{i} SUM: #{factors_sum(i)}"
+  def self.can_be_written_as_abudant
+    abudant_numbers = find_abundant_numbers
+    print abudant_numbers.size
+    arr = Array.new(abudant_numbers.size,false)
+      abudant_numbers.each do |i|
+      (abudant_numbers[i]..abudant_numbers.size).each do |j|
+        arr[abudant_numbers[i] + abudant_numbers[j]]=true if abudant_numbers[i] + abudant_numbers[j] <= LIMIT
+        puts 'changing!'
+      end
+    end
+    arr
+  end
+
+  def self.find_abundant_numbers
+    (2..LIMIT).each_with_object([]) do |i, arr|
       arr << i if i < factors_sum(i)
     end
   end
@@ -19,5 +32,4 @@ module NonAbudantSums
   end
 end
 
-
-puts NonAbudantSums.find_abundant_numbers(100)
+print NonAbudantSums.can_be_written_as_abudant
