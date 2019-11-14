@@ -1,15 +1,7 @@
-module DistinctPowers
-  def self.find_distinct_terms
-    
-    distinct_terms = []
-    
-    (2..100).each do |a|
-      (2..100).each do |b|
-      distinct_terms << a**b unless distinct_terms.include?(a**b)    
-      end
+distinct_terms =  (2..100).each_with_object([]) do |a, arr|
+    (2..100).each do |b|
+     arr << a**b unless arr.include?(a**b)    
     end
-    puts distinct_terms.size
   end
-end
 
-DistinctPowers.find_distinct_terms
+puts distinct_terms.size
